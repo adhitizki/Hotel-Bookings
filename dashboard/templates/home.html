@@ -1,1 +1,111 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block content %}
+<style>
+  .hero-image {
+    background-image: url(https://conradhotels3.hilton.com/resources/media/ch/FAOAPCI/en_US/img/shared/carousel/main/CN_pool04_970x350_FitToBoxSmallDimension_LowerCenter.jpg);
+    background-color: #cccccc;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    position: relative;
+}
 
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+}
+</style>
+
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <br><br>
+
+      <div class="hero-image">
+        <div class="hero-text">
+          <h1 style="font-size:50px">HOTEL BOOKINGS</h1>
+          <p>Adhitya Izki Saputra</p>
+        </div>
+      </div>
+      <br><br>
+
+      <p style="margin:25px; text-align:justify">
+        Saat ingin berlibur atau terdapat keperluan ke luar kota. Seseorang akan melakukan pemesanan hotel.
+        Hotel sendiri merupakan sebuah tempat yang dapat menampung seseorang untuk sementara waktu.
+        Hotel sendiri terdapat di berbagai wilayah seperti tempat atau destinasi wisata atau pusat bisnis.
+        Bisnis hotel sendiri sangat menjanjikan terutama untuk wilayah destinasi wisata atau pusat kota, yang 
+        banyak orang bertujuan untuk berlibur atau memiliki urusan di kota tersebut. Namun dalam bisnis hotel terdapat 
+        juga berbagai tentangan seperti pembatalan pesanan atau kurang tertariknya atau minat seseorang untuk memesan di hotel tertentu.
+        Maka untuk meminimalisir adanya pembatalan, maka dapat menggunakan ke ilmuan Data Science untuk memprediksi pembatalan pemesanan,
+        untuk melakukan analisa dan prediksi pembatalan maka digunakan data historis pemesanan hotel. Project ini menggunakan data pemesanan
+        di negara Portugal. Data diporoleh melalui
+        <a href="https://www.kaggle.com/jessemostipak/hotel-booking-demand" target="_blank">link ini.</a>
+      </p>
+      <br>
+
+      <h3 style="border-bottom: 3px solid grey">
+          Problem
+      </h3>
+      <p style="margin:25px; text-align:justify">
+          Dalam pemesanan hotel, pihak hotel ingin mendapatkan untung sebesar-besarnya dan rugi 
+          seminimal mungkin. Namun dalam praktiknya kerugian tidak dapat dihindarkan, salah satunya 
+          adalah dengan adanya pihak yang melakukan pembatalan hotel. Seperti keuntungan potensial yang 
+          harusnya didapat berkurang akibat ada pemesan yang membatalkan pemesanan, apalagi yang memesan dengan 
+          jumlah banyak atau kelompok.
+      </p>
+      <br>
+
+      <h3 style="border-bottom: 3px solid grey">
+        Goals
+      </h3>
+      <ul style="margin:25px; text-align:justify">
+        <li>Mampu memprediksi tamu yang akan melakukan pembatalan pesanan</li>
+        <li>Melakukan strategi untuk mengurangi kerugian akibat dari pembatalan pesanan hotel</li>
+        <li>Melakukan analisis mengenai customer behaviour</li>
+      </ul>
+      <br>
+
+      <h3 style="border-bottom: 3px solid grey">
+        Source and References
+      </h3>
+      <ul style="margin:25px; text-align:justify">
+
+        <li>
+          <a href="https://www.sciencedirect.com/science/article/pii/S2352340918315191" target="_blank">
+            Science Direct hotel bookings dataset</a>
+        </li>
+
+        <li>
+          <a href="https://www.kaggle.com/jessemostipak/hotel-booking-demand" target="_blank">
+            Kaggle dataset</a>
+        </li>
+
+        <li>
+          <a href="https://www.ezeeabsolute.com/blog/best-methods-to-increase-hotel-adr/?utm_source=KPIeBook&utm_medium=blog&utm_campaign=eABlog" target="_blank">
+            Best methods increase hotel ADR</a>
+        </li>
+
+        <li>
+          <a href="https://www.ezeeabsolute.com/blog/hotel-kpi/" target="_blank">
+            Hotel KPI</a>
+        </li>
+
+        <li>
+          <a href="https://www.xotels.com/en/hotel-management/hotel-business-plan/" target="_blank">
+            Hotel management bussiness plan</a>
+        </li>
+
+      </ul>
+      <br>
+
+
+    </div>
+  </div>
+{% endblock %}

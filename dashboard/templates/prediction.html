@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block content %}
+<style>
+    .judul {
+        text-align : center;
+        margin : 25px;
+    }
+
+</style>
+
+<div class="container">
+    <br><br>
+
+    <h1 class="judul">Prediction</h1>
+    <br><br>
+    <center>    
+        <form method="POST" action="http://localhost:5000/prediction/result">
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Hotel</span>    
+                <select name="hotel" style="width: 350px" class="form-control" required="required">
+                    <option value="Resort Hotel">Resort Hotel</option>
+                    <option value="City Hotel">City Hotel</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Lead Time</span>
+                    <input type="number" name="leadtime" step="1" min="0" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Arrival Date</span>
+                    <input type="date" name="arrival" step="1" min="2015-07-01" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Stays in Weekday</span>
+                    <input type="number" name="staysday" step="1" min="0" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Stays in Weekend</span>
+                    <input type="number" name="staysend" step="1" min="0" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Adults</span>
+                    <input type="number" name="adults" step="1" min="0" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Children</span>
+                    <input type="number" name="children" step="1" min="0" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Baby</span>
+                    <input type="number" name="baby" step="1" min="0" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Meal</span>    
+                <select name="meal" style="width: 350px" class="form-control" required="required">
+                    <option value="SC">SC</option>
+                    <option value="BB">BB</option>
+                    <option value="HB">HB</option>
+                    <option value="FB">FB</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Country</span>    
+                <select name="country" style="width: 350px" class="form-control" required="required">
+                    <option value="Domestic">Domestic (Portugal)</option>
+                    <option value="International">International (Non-Portugal)</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Market Segment</span>    
+                <select name="market" style="width: 350px" class="form-control" required="required">
+                    <option value="Direct">Direct</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="Online TA">Online TA</option>
+                    <option value="Offline TA/TO">Offline TA/TO</option>
+                    <option value="Groups">Groups</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Distribution Chnl.</span>    
+                <select name="distribution" style="width: 350px" class="form-control" required="required">
+                    <option value="Direct">Direct</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="TA/TO">TA/TO</option>
+                    <option value="GDS">GDS</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                    <span class="input-group-text" style="width: 150px">Customer Type</span>    
+                    <select name="customer" style="width: 350px" class="form-control" required="required">
+                        <option value="Transient">Transient</option>
+                        <option value="Transient Party">Transient Party</option>
+                        <option value="Other">Other</option>
+                        <option disabled selected hidden>Choose One</option>
+                    </select>
+                    </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Repeated Guest</span>    
+                <select name="repeatedguest" style="width: 300px" class="form-control" required="required">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Prev Cancel</span>    
+                <select name="prevcancel" style="width: 300px" class="form-control" required="required">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Prev not Cancel</span>    
+                <select name="prevnotcancel" style="width: 300px" class="form-control" required="required">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Room Type</span>    
+                <select name="room" style="width: 300px" class="form-control" required="required">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                    <option value="L">L</option>
+                    <option value="P">P</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Books Change</span>
+                    <input type="number" name="bookschange" step="1" min="0" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Deposit Type</span>    
+                <select name="deposit" style="width: 300px" class="form-control" required="required">
+                    <option value="Deposit">Deposit</option>
+                    <option value="No Deposit">No Deposit</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Agent</span>    
+                <select name="agent" style="width: 300px" class="form-control" required="required">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Company</span>    
+                <select name="company" style="width: 300px" class="form-control" required="required">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Days Waiting</span>
+                    <input type="number" name="daywait" step="1" min="0" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">ADR</span>
+                    <input type="number" name="adr" step="0.1" min="0" style="width: 350px" id="totalAmt" class="form-control" required=True/> 
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Car Parking</span>    
+                <select name="carparking" style="width: 300px" class="form-control" required="required">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+                <div class="input-group mb-3" style="width: 500px">
+                <span class="input-group-text" style="width: 150px">Special Request</span>    
+                <select name="specialrequest" style="width: 300px" class="form-control" required="required">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option disabled selected hidden>Choose One</option>
+                </select>
+                </div>
+
+            <br>
+            <button type="submit" style="background-color: darkslategray; color: whitesmoke" class="btn btn-info">Predict</button>
+        </form>
+        <br>
+    </center>
+
+
+
+
+</div>
+{% endblock %}

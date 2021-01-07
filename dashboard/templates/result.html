@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 70%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+</style>
+
+<center>
+    <br><br>
+
+    <h1 class="judul">Prediction Result</h1>
+    <br><br>
+
+    <div class="container">
+        <div class="row justify-content-center">            
+
+            <div class="col">
+                <div style="overflow-x:auto;">
+                    <table>
+                    <tr>
+                        <th>Hotel</th>
+                        <td>{{hotel}}</td>
+                    </tr>
+                    <tr>
+                        <th>Lead Time</th>
+                        <td>{{leadtime}}</td>
+                    </tr>
+                    <tr>
+                        <th>Arrival Date</th>
+                        <td>{{arrival}}</td>
+                    </tr>
+                    <tr>
+                        <th>Stays in Weekday</th>
+                        <td>{{staysday}}</td>
+                    </tr>
+                    <tr>
+                        <th>Stays in Weekend</th>
+                        <td>{{staysend}}</td>
+                    </tr>
+                    <tr>
+                        <th>Adults</th>
+                        <td>{{adults}}</td>
+                    </tr>
+                    <tr>
+                        <th>Children</th>
+                        <td>{{children}}</td>
+                    </tr>
+                    <tr>
+                        <th>Baby</th>
+                        <td>{{baby}}</td>
+                    </tr>
+                    <tr>
+                        <th>Meal</th>
+                        <td>{{meal}}</td>
+                    </tr>
+                    <tr>
+                        <th>Country</th>
+                        <td>{{country}}</td>
+                    </tr>
+                    <tr>
+                        <th>Market Segment</th>
+                        <td>{{market}}</td>
+                    </tr>
+                    <tr>
+                        <th>Distribution Channel</th>
+                        <td>{{distribution}}</td>
+                    </tr>
+                    <tr>
+                        <th>Customer Type</th>
+                        <td>{{customer}}</td>
+                    </tr>
+                    <tr>
+                        <th>Repeated Guest</th>
+                        <td>{{repeatedguest}}</td>
+                    </tr>
+                    <tr>
+                        <th>Previous Cancellation</th>
+                        <td>{{prevcancel}}</td>
+                    </tr>
+                    <tr>
+                        <th>Previous not Cancellation</th>
+                        <td>{{prevnotcancel}}</td>
+                    </tr>
+                    <tr>
+                        <th>Room Type</th>
+                        <td>{{room}}</td>
+                    </tr>
+                    <tr>
+                        <th>Bookings Change</th>
+                        <td>{{bookschange}}</td>
+                    </tr>
+                    <tr>
+                        <th>Deposit Type</th>
+                        <td>{{deposit}}</td>
+                    </tr>
+                    <tr>
+                        <th>Agent</th>
+                        <td>{{agent}}</td>
+                    </tr>
+                    <tr>
+                        <th>Company</th>
+                        <td>{{company}}</td>
+                    </tr>
+                    <tr>
+                        <th>Days in Waiting</th>
+                        <td>{{daywait}}</td>
+                    </tr>
+                    <tr>
+                        <th>ADR</th>
+                        <td>{{adr}}</td>
+                    </tr>
+                    <tr>
+                        <th>Car Parking</th>
+                        <td>{{carparking}}</td>
+                    </tr>
+                    <tr>
+                        <th>Special Request</th>
+                        <td>{{specialrequest}}</td>
+                    </tr>
+
+                    </table>
+                </div>
+            </div>
+
+            
+            <div class="col">
+                <hr>
+                <br><br><br><br>
+                <h5>Hotel Booking Reservation Prediction</h5>
+                <br>
+                <h3><b>{{pred}}</b></h3>
+                <br><br><br><br>
+                <hr>
+                <a href="/prediction" target="_self">
+                    <button style="background-color: darkslategray; color: whitesmoke" class="btn btn-light">
+                        Predict Again
+                    </button>
+                </a>
+            
+                <a href="/" target="_self">
+                    <button style="background-color: darkslategrey; color: whitesmoke" class="btn btn-light">
+                        Back to Home
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <hr>
+</center>
+
+{% endblock %}
