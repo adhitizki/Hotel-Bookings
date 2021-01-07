@@ -56,8 +56,8 @@ Model yang digunakan adalah Random Forest yang sudah di lakukan hyper parameter 
 | Random Forest |  |
 | --- | --- |
 | AUC | 0.95 |
-| Accuracy | 0.85 |
-| Recall | 0.88 |
+| Accuracy | 0.88 |
+| Recall | 0.87 |
 
 ## Conclusion
 - City Hotel lebih mahal dibandingkan dengan Resort Hotel
